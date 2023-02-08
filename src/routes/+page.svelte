@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { form, field } from 'svelte-forms';
-  import { required, email } from 'svelte-forms/validators';
+    import { form, field } from 'svelte-forms';
+    import { required, email } from 'svelte-forms/validators';
 
+    // Investigar goto en routing, poner errores de input(vacio, credenciales incorrectas);
     const userEmail = field('email', '', [required(), email()]);
     const userPassword = field('password', '', [required()]);
     const loginForm = form(userEmail, userPassword);
@@ -15,7 +16,6 @@
             window.location.assign('/login');
         }
     }
-
 </script>
 
 <form on:submit|preventDefault={goToLogin}>
